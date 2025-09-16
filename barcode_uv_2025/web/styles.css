@@ -1,0 +1,150 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+/* Verstecke Barcode-Spalte komplett */
+td[data-label="Barcode"], th[data-label="Barcode"] {
+    display: none;
+}
+
+
+/* Labels für helle/dunkle Darstellung */
+td::before {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black; /* default */
+}
+
+/* Automatisch für Dark Mode */
+@media (prefers-color-scheme: dark) {
+  td::before {
+    color: rgb(252, 252, 252); /* hell für Dark Mode */
+  }
+
+  td {
+    color: #d154c4; /* Inhalte heller machen */
+  }
+}
+
+/* Normal für Light Mode */
+@media (prefers-color-scheme: light) {
+  td::before {
+    color: rgb(169, 219, 165);
+  }
+  td {
+    color: #222;
+  }
+}
+
+
+
+td {
+  border: 1px solid #151414;
+  background-color: #eaf1ea;
+  padding: 8px;
+  text-align: left;
+  font-size: large;
+  word-wrap: break-word;
+}
+
+
+th {
+  border: 5px solid #ddd;
+  background-color: #4CAF50;
+  padding: 8px;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+}
+input {
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 16px;
+}
+button {
+  padding: 8px 12px;
+  margin: 5px;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+img {
+  max-width: 100px;
+  height: auto;
+  cursor: pointer;
+}
+
+
+
+/*
+
+
+
+
+
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
+/* Buttons 
+
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead {
+    display: none; 
+  }
+
+  tr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+
+
+  td {
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+*/

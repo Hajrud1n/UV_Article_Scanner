@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Barcode Manager</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Barcode Manager</h1>
+<input type="text" id="search" placeholder="Search..." oninput="searchTable()">
+<button onclick="saveChanges()">Save Changes</button>
+<table id="barcodeTable">
+    <thead>
+        <tr data-barcode="123">
+            <!--<td data-label="Barcode">Barcode</td>-->
+            <td data-label="Box">Box</td>
+            <td data-label="Produkt">Produkt</td>
+            <td data-label="Menge">Menge</td>
+            <td data-label="Ablauf">Ablauf</td>
+            <td data-label="Count">Count</td>
+            <td data-label="Bild">Bild</td>
+            <td data-label="Aktion"><button>Delete</button></td>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Dinamicly filld -->
+    </tbody>
+</table>
+<script type="text/javascript" src="/eel.js"></script>
+<script src="main.js"></script>
+
+
+</body>
+</html>

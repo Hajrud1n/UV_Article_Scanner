@@ -1,0 +1,5 @@
+uv init .
+rm main.py
+uv add -r requirements.txt
+uv run ArticleScanner.py #find the index of your cam or enter ip from your webcam
+
