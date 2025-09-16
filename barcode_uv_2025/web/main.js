@@ -1,4 +1,4 @@
-let editedData = {}; 
+let editedData = {};
 
 document.addEventListener("DOMContentLoaded", fetchData);
 
@@ -7,8 +7,7 @@ function fetchData() {
         const items = JSON.parse(data);
         const tbody = document.querySelector("#barcodeTable tbody");
         tbody.innerHTML = "";
-        //<td>${item.barcode}</td> put it under <tr data-itemid="${item.item_id}">
-        //if you want to see the barcode too on the Table 
+
         items.forEach(item => {
             const row = `<tr data-itemid="${item.item_id}">
                 <td contenteditable="true" oninput="trackChanges('${item.item_id}', 'box_name', this)">${item.box_name}</td>
@@ -42,7 +41,27 @@ function saveChanges() {
     fetchData();
 }
 
+// ---- Export PDF ----
+function export_as_pdf() {
+    eel.get_items()(function(data) {
+        const items = JSON.parse(data);
+        eel.save_pdf(items)(function(response) {
+            console.log(response);
+            alert("PDF exported!");
+        });
+    });
+}
 
+// ---- Export Excel ----
+function export_as_excel() {
+    eel.get_items()(function(data) {
+        const items = JSON.parse(data);
+        eel.save_excel(items)(function(response) {
+            console.log(response);
+            alert("Excel exported!");
+        });
+    });
+}
 
 function deleteItem(item_id) {
     eel.delete_item(parseInt(item_id))(function(response) {
@@ -60,5 +79,3 @@ function searchTable() {
         row.style.display = text.includes(searchQuery) ? "" : "none";
     });
 }
-
-
